@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
 
-class Footer extend Component {
+//BUG: typo -> extend corrected to extends
+class Footer extends Component {
   render() {
     return (
       <div>

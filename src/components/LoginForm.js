@@ -21,29 +21,29 @@ class LoginForm extends Component {
             <FormGroup controlId='formHorizontalEmail'>
               <Col sm={8}>
                 <FormControl className='input-line'
-                             type='email'
-                             name='email'
-                             placeholder='Email Address'
-                             autoCapitalize='off'
-                             autoCorrect='off' />
+                  type='email'
+                  name='email'
+                  placeholder='Email Address'
+                  autoCapitalize='off'
+                autoCorrect='off' />
               </Col>
             </FormGroup>
 
             <FormGroup controlId='formHorizontalPassword'>
               <Col sm={8}>
                 <FormControl className='input-line'
-                             type='password'
-                             name='password'
-                             placeholder='Password' />
+                  type='password'
+                  name='password'
+                placeholder='Password' />
               </Col>
             </FormGroup>
 
             <FormGroup>
               <Col sm={8} className='mt6x'>
                 <button className='flat-button border-gray'
-                        type='submit'
-                        onClick={this.handleLogin}>Next
-                        <Glyphicon className='pl2x' glyph='menu-right' />
+                  type='submit'
+                  onClick={this.props.handleLogin}>Next
+                  <Glyphicon className='pl2x' glyph='menu-right' />
                 </button>
               </Col>
             </FormGroup>
@@ -51,8 +51,8 @@ class LoginForm extends Component {
           </Col>
         </fieldset>
       </Form>
-    );
-  }
-}
+        );
+      }
+    }
 
-export default LoginForm;
+    export default LoginForm;

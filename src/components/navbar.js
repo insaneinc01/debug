@@ -5,8 +5,9 @@ class Navbar extends Component {
 
     constructor(props) {
     super(props);
-
-    this = { showLogoutButton: false };
+    this.state = {
+      showLogoutButton: false
+    };
   }
 
   handleLogoutButton() {
@@ -14,6 +15,7 @@ class Navbar extends Component {
       showLogoutButton: !prevState.showLogoutButton
     }));
   }
+  //Use of 2 different states for handling logoutbutton. Instead the logoutbutton can be controlled from parent. Please see Navbar-alternate.js file
 
   render() {
     let sessionButton;

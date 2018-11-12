@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from '../components/Navbar';//BUG: actual file name not capitalised
+import Navbar from '../components/Navbar-alternate';//BUG: actual file name not capitalised
 import Footer from '../components/Footer';
 import LoginForm from '../components/LoginForm'; //BUG: missing import
 import { Glyphicon } from 'react-bootstrap';
@@ -11,37 +11,32 @@ class App extends Component {
     super(props);
 
     this.state = {
-      showLoginForm: true,
-      showCheckmark: false
+      login: false,
     };
     this.handleLogout = this.handleLogout.bind(this);
-    this.handleLogin = this.handleLogin.bind(this); //BUG: missing earlier
+    this.handleLogin = this.handleLogin.bind(this);
   }
 
   handleLogin() {
-    this.refs.navbutton.handleLogoutButton();
     this.setState({
-      showLoginForm: false,
-      showCheckmark: true
+      login: true,
     });
   }
 
   handleLogout() {
-    this.refs.navbutton.handleLogoutButton();
     this.setState({
-      showLoginForm: true,
-      showCheckmark: false
+      login: false
     });
   }
 
   render() {
     return (
       <div className='app'>
-        <Navbar ref='navbutton' handleLogout={this.handleLogout} />
-        <div className={this.state.showLoginForm === true ? '' : 'hide'}>
+        <Navbar handleLogout={this.handleLogout} loggedIn={this.state.login}/>
+        <div className={!this.state.login ? '' : 'hide'}>
           <LoginForm handleLogin={this.handleLogin} />
         </div>
-        <div className={this.state.showCheckmark === true ? 'text-center mt9x' : 'hide'}>
+        <div className={this.state.login ? 'text-center mt9x' : 'hide'}>
           <Glyphicon glyph='glyphicon glyphicon-ok-sign' />
           <h2>Great work!</h2>
         </div>
