@@ -1,3 +1,10 @@
+# HOW TO RUN
+- git clone https://github.com/insaneinc01/debug.git
+- cd debug
+- npm install
+- npm start
+
+
 # Notes
 - All bugs fixed - relevant comments added (typos, missing imports, proper contructor props etc)
 - Issue with bootstrap imports fixed, only bootstrap v3 themes work
